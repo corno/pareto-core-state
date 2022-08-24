@@ -1,5 +1,8 @@
 export type Stack<T> = {
-    push: (v:T) => void
+    push: (v: T) => void
     isEmpty: () => boolean
-    pop: () => T
+    pop: <RV>(
+        onNotEmpty: ($: T) => RV,
+        onEmpty: () => RV,
+    ) => RV
 }

@@ -6,7 +6,7 @@ import { Stack } from "../types/Stack";
 
 export function createStack<T>(seed: pt.Array<T>): Stack<T> {
     const imp: T[] = []
-    
+
     seed.forEach(($) => {
         imp.push($)
     })
@@ -15,12 +15,12 @@ export function createStack<T>(seed: pt.Array<T>): Stack<T> {
     imp.reverse()
 
     return {
-        pop: () => {
-            const res = imp.pop()
-            if (res === undefined) {
-                pl.panic("popping an empty stack")
+        pop: (onNotEmpty, onEmpty) => {
+            const current = imp.pop()
+            if (current === undefined) {
+                return onEmpty()
             } else {
-                return res
+                return onNotEmpty(current)
             }
         },
         push: (v) => {
