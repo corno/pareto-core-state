@@ -1,4 +1,4 @@
-import { createDictionary } from "pareto-core-lib"
+import * as pr from "pareto-core-raw"
 import { DictionaryBuilder } from "../types/DictionaryBuilder"
 
 export function createDictionaryBuilder<T>(
@@ -19,7 +19,7 @@ export function createDictionaryBuilder<T>(
             imp[key] = value
         },
         getDictionary: () => {
-            return createDictionary(imp)
+            return pr.wrapRawDictionary(imp)
         },
     }
 }

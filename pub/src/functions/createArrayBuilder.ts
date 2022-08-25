@@ -1,4 +1,4 @@
-import * as pl from "pareto-core-lib"
+import * as pr from "pareto-core-raw"
 import { ArrayBuilder } from "../types/ArrayBuilder"
 
 export function createArrayBuilder<T>(): ArrayBuilder<T> {
@@ -8,7 +8,7 @@ export function createArrayBuilder<T>(): ArrayBuilder<T> {
             imp.push(value)
         },
         getArray: () => {
-            return pl.createArray(imp.slice(0))
+            return pr.wrapRawArray(imp.slice(0))
         },
     }
 }
