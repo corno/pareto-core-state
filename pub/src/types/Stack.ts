@@ -5,4 +5,5 @@ export type Stack<T> = {
         onNotEmpty: ($: T) => RV,
         onEmpty: () => RV,
     ) => RV
+    empty: (callback: ($:T) => void) => void
 }

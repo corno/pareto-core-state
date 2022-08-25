@@ -28,6 +28,15 @@ export function createStack<T>(seed: pt.Array<T>): Stack<T> {
         },
         isEmpty: () => {
             return imp.length === 0
-        }
+        },
+        empty: (cb) => {
+            while (true) {
+                const entry = imp.pop()
+                if (entry === undefined) {
+                    return
+                }
+                cb(entry)
+            }
+        },
     }
 }
