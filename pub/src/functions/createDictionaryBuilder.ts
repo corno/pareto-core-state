@@ -1,4 +1,4 @@
-import * as pr from "pareto-core-raw"
+import * as pr from "pareto-core-internals"
 import { DictionaryBuilder } from "../types/DictionaryBuilder"
 
 export function createDictionaryBuilder<T>(
