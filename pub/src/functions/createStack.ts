@@ -37,5 +37,24 @@ export function createStack<T>(seed: pt.Array<T>): Stack<T> {
                 cb(entry)
             }
         },
+        doUntil: (
+            $c
+        ) => {
+
+            while (true) {
+                const res = imp.pop()
+
+                if (res === undefined) {
+                    return
+                } else {
+                    imp.push(res)
+                    const goOn = $c(res)
+                    if (!goOn) {
+                        //callback()
+                        return
+                    }
+                }
+            }
+        },
     }
 }
