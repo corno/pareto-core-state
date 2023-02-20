@@ -19,7 +19,11 @@ export function createDictionaryBuilder<T>(
             imp[key] = value
         },
         getDictionary: () => {
-            return pr.wrapRawDictionary(imp)
+            const clone: { [key: string]: T } = {}
+            Object.keys(imp).forEach(($) => {
+                clone[$] = imp[$]
+            })
+            return pr.wrapRawDictionary(clone)
         },
     }
 }

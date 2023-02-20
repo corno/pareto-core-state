@@ -6,7 +6,7 @@ import { Stack } from "../types/Stack";
 export function createStack<T>(seed: pt.Array<T>): Stack<T> {
     const imp: T[] = []
 
-    seed.forEach(($) => {
+    seed.__forEach(($) => {
         imp.push($)
     })
 
