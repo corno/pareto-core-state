@@ -58,7 +58,3 @@ export function createStack<T>(seed: pt.Array<T>): Stack<T> {
         },
     }
 }
-
-export function createEmptyStack<T>() {
-    return createStack<T>(pi.wrapRawArray([]))
-}
