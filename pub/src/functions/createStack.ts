@@ -1,7 +1,7 @@
-import * as pt from "pareto-core-types"
+import * as pt from 'pareto-core-types'
+import * as pi from 'pareto-core-internals'
 
-
-import { Stack } from "../types/Stack";
+import { Stack } from "../types/Stack"
 
 export function createStack<T>(seed: pt.Array<T>): Stack<T> {
     const imp: T[] = []
@@ -57,4 +57,8 @@ export function createStack<T>(seed: pt.Array<T>): Stack<T> {
             }
         },
     }
+}
+
+export function createEmptyStack<T>() {
+    return createStack<T>(pi.wrapRawArray([]))
 }
