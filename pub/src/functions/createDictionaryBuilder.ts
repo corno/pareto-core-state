@@ -1,6 +1,13 @@
 import * as pr from "pareto-core-internals"
 import { DictionaryBuilder } from "../types/DictionaryBuilder"
 
+/**
+ * creates a safe {@link DictionaryBuilder}.
+ * a duplicate strategy and duplicate handler have to be provided for when an entry is added with an already existing key.
+ * the strategy can either be 'ignore' or 'overwrite'
+ * the handler will be called when that entry is added
+ * @returns 
+ */
 export function createDictionaryBuilder<T>(
     duplicateStrategy:
         | ["ignore", {}]

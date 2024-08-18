@@ -1,6 +1,11 @@
 import * as pr from "pareto-core-internals"
 import { ArrayBuilder } from "../types/ArrayBuilder"
 
+/**
+ * creates an {@link ArrayBuilder }.
+ * 
+ * @returns
+ */
 export function createArrayBuilder<T>(): ArrayBuilder<T> {
     const imp: T[] = []
     return {

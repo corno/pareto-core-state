@@ -3,6 +3,11 @@ import * as pi from 'pareto-core-internals'
 
 import { Stack } from "../types/Stack"
 
+/**
+ * documentation TBD
+ * @param seed 
+ * @returns 
+ */
 export function createStack<T>(seed: pt.Array<T>): Stack<T> {
     const imp: T[] = []
 
