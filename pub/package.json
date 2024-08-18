@@ -1,6 +1,6 @@
 {
   "name": "pareto-core-state",
-  "version": "0.19.1",
+  "version": "0.20.0",
   "license": "ISC",
   "description": "a pareto core package for developing statefull algorithms",
   "author": "Corno",
